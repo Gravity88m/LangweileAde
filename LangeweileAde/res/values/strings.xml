@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LangeweileAde</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="str_showActivity">Aktivitäten anzeigen</string>
+    <string name="str_moneyLeftDesc">Budget :</string>
+    <string name="str_weatherDesc">Aktuelles Wetter :</string>
+    <string name="str_addActivity">Aktivität hinzufügen</string>
+    <string name="str_requestActivity">Made my Day!</string>
+
+</resources>
