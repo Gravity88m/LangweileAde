@@ -14,31 +14,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/btn_made"
-        android:layout_alignRight="@id/btn_made"
+        android:layout_alignRight="@id/txt_moneyLeft"
         android:layout_below="@id/btn_made"
-        android:layout_marginTop="170dp"
-        android:layout_toLeftOf="@id/spin_weather"
+        android:layout_marginTop="185dp"
+        android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:text="@string/str_weatherDesc"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white"
         android:textSize="@dimen/button_text_size_p" />
-
-    <Spinner
-        android:id="@+id/spin_weather"
-        style="@style/button_default"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/lbl_weather"
-        android:layout_alignLeft="@id/txt_moneyLeft"
-        android:layout_alignParentStart="false"
-        android:layout_alignRight="@id/txt_moneyLeft"
-        android:layout_alignTop="@+id/lbl_weather"
-        android:background="@drawable/made_button"
-        android:gravity="center"
-        android:paddingBottom="0dp"
-        android:paddingTop="0dp"
-        android:spinnerMode="dropdown" />
 
     <TextView
         android:id="@+id/lbl_moneyLeft"
@@ -46,7 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/btn_made"
         android:layout_below="@id/btn_made"
-        android:layout_marginTop="142dp"
+        android:layout_marginTop="150dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
         android:text="@string/str_moneyLeftDesc"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white"
@@ -60,7 +46,7 @@
         android:layout_alignLeft="@+id/btn_showActivity"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/txt_moneyLeft"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="20dp"
         android:paddingBottom="10dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
@@ -107,6 +93,30 @@
         android:paddingBottom="5dp"
         android:paddingLeft="10dp"
         android:text="@string/str_addActivity"
+        android:textSize="@dimen/button_text_size_p" />
+
+    <ImageView
+        android:id="@+id/img_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/lbl_weather"
+        android:layout_alignLeft="@+id/txt_moneyLeft"
+        android:layout_alignRight="@id/txt_moneyLeft"
+        android:layout_alignTop="@+id/lbl_weather"
+        android:layout_marginLeft="37dp"
+        android:contentDescription="@string/str_miniWeather" />
+
+    <TextView
+        android:id="@+id/txt_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lbl_weather"
+        android:layout_alignLeft="@+id/txt_moneyLeft"
+        android:layout_alignRight="@id/txt_moneyLeft"
+        android:layout_alignTop="@id/lbl_weather"
+        android:layout_marginRight="40dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/white"
         android:textSize="@dimen/button_text_size_p" />
 
 </RelativeLayout>

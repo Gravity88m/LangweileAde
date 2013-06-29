@@ -1,15 +1,26 @@
 package com.example.langeweileade;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.json.JSONException;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.provider.SyncStateContract.Constants;
 import android.view.Menu;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.langweileade.wetter.Globals;
+import com.langweileade.wetter.JSONWeatherParser;
+import com.langweileade.wetter.Weather;
+import com.langweileade.wetter.WeatherHttpClient;
 
 public class MainActivity extends Activity {
+
+	private ImageView img_weather;
+	private TextView txt_temp;
 	
 
 	@Override
@@ -17,15 +28,13 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Spinner spin_Weather = (Spinner)this.findViewById(R.id.spin_weather);
-		List<String> weathers = new ArrayList<String>();
-		weathers.add("Heiﬂ");
-		weathers.add("Kalt");
+		img_weather = (ImageView) findViewById(R.id.img_weather);
+		txt_temp = (TextView) findViewById(R.id.txt_temp);
 		
-		ArrayAdapter<String> spin_WeatherAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,weathers);
-		spin_WeatherAdapter.setDropDownViewResource(R.layout.weatherspin_item);
+		String city = "Saarbrucken,DE";
 		
-		spin_Weather.setAdapter(spin_WeatherAdapter);
+		JSONWeatherTask task = new JSONWeatherTask();
+		task.execute(new String[] { city });
 	}
 
 	@Override
@@ -34,5 +43,44 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	private class JSONWeatherTask extends AsyncTask<String, Void, Weather> {
 
+		@Override
+		protected Weather doInBackground(String... params) {
+			Weather weather = new Weather();
+			String data = ((new WeatherHttpClient()).getWeatherData(params[0]));
+			
+			try {
+				weather = JSONWeatherParser.getWeather(data);
+				
+				// Let's retrieve the icon
+				weather.iconData = ((new WeatherHttpClient())
+						.getImage(weather.currentCondition.getIcon()));
+				
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			return weather;
+
+		}
+
+		@Override
+		protected void onPostExecute(Weather weather) {
+			super.onPostExecute(weather);
+			
+			if (weather.iconData != null && weather.iconData.length > 0) {
+				Bitmap img = BitmapFactory.decodeByteArray(weather.iconData, 0,
+						weather.iconData.length);
+				
+				img_weather.setImageBitmap(img);
+			}
+			txt_temp.setText(""
+					+ Math.round((weather.temperature.getTemp() - 275.15))
+					+ "∞C");
+			Globals.CURRENT_TEMP = Math.round((weather.temperature.getTemp() - 275.15));
+			Globals.CURRENT_WEATHER = weather.currentCondition.getCondition();
+		}
+
+	}
 }
