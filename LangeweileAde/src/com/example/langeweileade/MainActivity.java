@@ -3,15 +3,19 @@ package com.example.langeweileade;
 import org.json.JSONException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.SyncStateContract.Constants;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.langeweileade.R.id;
 import com.langweileade.wetter.Globals;
 import com.langweileade.wetter.JSONWeatherParser;
 import com.langweileade.wetter.Weather;
@@ -35,6 +39,33 @@ public class MainActivity extends Activity {
 		
 		JSONWeatherTask task = new JSONWeatherTask();
 		task.execute(new String[] { city });
+		
+		Button btnAddActivity = (Button)this.findViewById(id.addActivity);
+		btnAddActivity.setOnClickListener(new OnClickListener()
+        { 
+        	public void onClick(View arg0) 
+        	{
+				Intent addActivity = new Intent(MainActivity.this, CreateActivity.class);
+				startActivity(addActivity);
+        	}
+		});
+
+		Button btnMade = (Button)this.findViewById(id.btn_made);
+		btnMade.setOnClickListener(new OnClickListener()
+		
+        { 
+        	public void onClick(View arg0) 
+        	{
+				Intent makeActivity = new Intent(MainActivity.this, ImageTextListViewActivity.class);
+				startActivity(makeActivity);
+        	}
+		});
+		
+		
+		
+
+		
+		
 	}
 
 	@Override
