@@ -1,0 +1,441 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darf_blue2"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/edtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" />
+
+            </TableRow>
+
+            <TextView
+                android:id="@+id/tvBeschreibung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beschreibung:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/edtBeschreibung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="8.14"
+                android:ems="10" />
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/txKosten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Kosten:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/edtKosten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tvEuro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="€"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/tvWochentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Wochentage:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <CheckBox
+                    android:id="@+id/cbMontag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Montag" />
+
+                <ToggleButton
+                    android:id="@+id/tbtnWochentag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ToggleButton" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <CheckBox
+                    android:id="@+id/cbDienstag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dienstag         " />
+
+                <CheckBox
+                    android:id="@+id/cbMittwoch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mittwoch" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <CheckBox
+                    android:id="@+id/cbDonnerstag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Donnerstag" />
+
+                <CheckBox
+                    android:id="@+id/cbFreitag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Freitag" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <CheckBox
+                    android:id="@+id/cbSamstag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Samstag       " />
+
+                <CheckBox
+                    android:id="@+id/cbSonntag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sonntag" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6" >
+
+                <TextView
+                    android:id="@+id/tvTemperatur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Temperatur:                   "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <ToggleButton
+                    android:id="@+id/tbtnTemperatur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ToggleButton" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6" >
+
+                <TextView
+                    android:id="@+id/tvTempMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Min:          "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/edtMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/tvTempMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Max:          "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/edtMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:inputType="number" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="22" >
+
+                <TextView
+                    android:id="@+id/tvPersonen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Personen:"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <EditText
+                    android:id="@+id/edtPersonen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <ToggleButton
+                    android:id="@+id/tbtnPersonen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="ToggleButton" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6" >
+
+                <TextView
+                    android:id="@+id/tvTageszeit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Tageszeit:                    "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <ToggleButton
+                    android:id="@+id/tbtnTageszeit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ToggleButton" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <CheckBox
+                    android:id="@+id/cbMorgens"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Morgens" />
+
+                <CheckBox
+                    android:id="@+id/cbMittags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="mittags" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <CheckBox
+                    android:id="@+id/cbAbends"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Abends" />
+
+                <CheckBox
+                    android:id="@+id/cbNachts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nachts" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6" >
+
+                <TextView
+                    android:id="@+id/tvWetter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="Wetter:                       "
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <ToggleButton
+                    android:id="@+id/tbtnWetter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ToggleButton" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <CheckBox
+                    android:id="@+id/cbSonnig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="sonnig" />
+
+                <CheckBox
+                    android:id="@+id/cbWindig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="windig" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <CheckBox
+                    android:id="@+id/cbSchnee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="schnee" />
+
+                <CheckBox
+                    android:id="@+id/cbRegen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="regen" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <Button
+                    android:id="@+id/btnSave"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Speichern" />
+
+                <Button
+                    android:id="@+id/btnRemove"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Löschen" />
+
+            </TableRow>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

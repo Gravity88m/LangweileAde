@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_l"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/btn_made"
+        style="@style/button_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_showActivity"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="85dp"
+        android:layout_marginRight="5dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/str_requestActivity"
+        android:textSize="@dimen/button_main_size_l" />
+
+    <Button
+        android:id="@+id/addActivity"
+        style="@style/button_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/btn_showActivity"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="left|center_vertical"
+        android:paddingBottom="8dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/str_addActivity"
+        android:textSize="@dimen/button_text_size_l" />
+
+    <EditText
+        android:id="@+id/txt_moneyLeft"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lbl_moneyLeft"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/lbl_moneyLeft"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="26dp"
+        android:layout_toLeftOf="@+id/btn_made"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp"
+        android:textSize="@dimen/button_text_size_p" />
+
+    <Button
+        android:id="@+id/btn_showActivity"
+        style="@style/button_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="52dp"
+        android:layout_marginLeft="200dp"
+        android:gravity="left|center_vertical"
+        android:paddingBottom="8dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/str_showActivity"
+        android:textSize="@dimen/button_text_size_l" />
+
+    <TextView
+        android:id="@+id/lbl_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btn_showActivity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@id/btn_made"
+        android:layout_marginRight="26dp"
+        android:layout_toLeftOf="@id/btn_made"
+        android:paddingBottom="2dp"
+        android:paddingTop="0dp"
+        android:text="@string/str_weatherDesc"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_text_size_p" />
+
+    <TextView
+        android:id="@+id/lbl_moneyLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btn_made"
+        android:layout_alignBottom="@+id/btn_made"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@id/btn_made"
+        android:paddingTop="5dp"
+        android:text="@string/str_moneyLeftDesc"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_text_size_p" />
+
+    <TextView
+        android:id="@+id/txt_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/addActivity"
+        android:layout_alignBottom="@id/addActivity"
+        android:layout_alignLeft="@id/lbl_weather"
+        android:layout_alignRight="@id/lbl_weather"
+        android:layout_alignTop="@id/addActivity"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="90dp"
+        android:paddingLeft="13dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_text_size_p" />
+
+    <ImageView
+        android:id="@+id/img_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/txt_temp"
+        android:layout_alignRight="@+id/lbl_weather"
+        android:layout_alignTop="@+id/txt_temp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginRight="50dp"
+        android:contentDescription="@string/str_miniWeather" />
+
+</RelativeLayout>
