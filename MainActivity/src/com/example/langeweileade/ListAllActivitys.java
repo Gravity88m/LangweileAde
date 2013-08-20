@@ -70,11 +70,10 @@ public class ListAllActivitys extends Activity implements OnItemClickListener {
 	    RowItem item = new RowItem(drawable.btn_star, nameTodo, beschreibungTodo, kostenTodo);
 	    rowItems.add(item);
 	
-		} while (result.moveToNext()); // solange Datens‰tze vorhanden
+		} while (result.moveToNext()); 
 	
-		result.close(); // Cursor schlieﬂen
-		db.close(); // Datenbank schlieﬂen
-		
+		result.close(); 
+		db.close(); 
 	
 
 

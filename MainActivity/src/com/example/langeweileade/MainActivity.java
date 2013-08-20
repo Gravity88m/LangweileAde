@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,7 +26,7 @@ public class MainActivity extends Activity {
 
 	private ImageView img_weather;
 	private TextView txt_temp;
-	
+	private EditText budgetLeft;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +38,10 @@ public class MainActivity extends Activity {
 		
 		img_weather = (ImageView) findViewById(R.id.img_weather);
 		txt_temp = (TextView) findViewById(R.id.txt_temp);
+		budgetLeft = (EditText) findViewById(id.txt_moneyLeft);
 		
-		String city = "Saarbrucken,DE";
+		
+		String city = "Saarbrucken,DE"; //FIXME
 		
 		JSONWeatherTask task = new JSONWeatherTask();
 		task.execute(new String[] { city });
@@ -53,13 +56,25 @@ public class MainActivity extends Activity {
         	}
 		});
 
-		Button btnMade = (Button)this.findViewById(id.btn_made);
-		btnMade.setOnClickListener(new OnClickListener()
+		Button btnMake = (Button)this.findViewById(id.btn_made);
+		btnMake.setOnClickListener(new OnClickListener()
 		
         { 
         	public void onClick(View arg0) 
         	{
-        		
+        		try {
+        			double budget = Double.parseDouble(budgetLeft.getText().toString()); 
+        			if (budget == 0) {
+        				throw new Exception("Bitte Budget angeben"); //FIXME to Toast
+        			}
+        			Bundle budgetBundle = new Bundle();
+        			budgetBundle.putDouble("Budget", budget);
+					Intent makeActivity = new Intent(MainActivity.this, MakeMyDayActivity.class);
+					makeActivity.putExtras(budgetBundle);
+					startActivity(makeActivity);
+				} catch (Exception e) {
+					Log.i("*E*", e.toString());
+				}
         		
 				
         	}
@@ -73,8 +88,8 @@ public class MainActivity extends Activity {
         	public void onClick(View arg0) 
         	{
         		try {
-					Intent makeActivity = new Intent(MainActivity.this, ListAllActivitys.class);
-					startActivity(makeActivity);
+					Intent listActivity = new Intent(MainActivity.this, ListAllActivitys.class);
+					startActivity(listActivity);
 				} catch (Exception e) {
 					Log.i("*E*", e.toString());
 				}
